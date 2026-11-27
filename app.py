@@ -74,7 +74,7 @@ passenger_count = st.number_input(
     step=1
 )
 
-url_api = "http://localhost:8000/"
+url_api = "https://taxifare-api-gm5cveuyqa-ew.a.run.app/"
 api_dict = {
     "pickup_datetime" : pickup_datetime,
     "pickup_longitude" : pickup_longitude,
