@@ -74,7 +74,7 @@ passenger_count = st.number_input(
     step=1
 )
 
-url_api = "http://localhost:8000/"
+url_api = st.secrets["API_URL"]
 api_dict = {
     "pickup_datetime" : pickup_datetime,
     "pickup_longitude" : pickup_longitude,
@@ -83,7 +83,7 @@ api_dict = {
     "dropoff_latitude" : dropoff_latitude,
     "passenger_count" : passenger_count
 }
-url_request = f"{url_api}predict?pickup_datetime={api_dict['pickup_datetime']}&pickup_longitude={api_dict['pickup_longitude']}&pickup_latitude={api_dict['pickup_latitude']}&dropoff_longitude={api_dict['dropoff_longitude']}&dropoff_latitude={api_dict['dropoff_latitude']}&passenger_count={api_dict['passenger_count']}"
+url_request = f"{url_api}/predict?pickup_datetime={api_dict['pickup_datetime']}&pickup_longitude={api_dict['pickup_longitude']}&pickup_latitude={api_dict['pickup_latitude']}&dropoff_longitude={api_dict['dropoff_longitude']}&dropoff_latitude={api_dict['dropoff_latitude']}&passenger_count={api_dict['passenger_count']}"
 response = requests.get(url_request, timeout=100)
 response.raise_for_status()
 response_api = response.json()
