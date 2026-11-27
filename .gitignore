@@ -8,4 +8,4 @@ wheels/
 .venv/
 
 # Environnement & Secrets
-.streamlit/secrets.toml
+secrets.toml
